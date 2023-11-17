@@ -25,7 +25,34 @@ df = pd.read_csv('data.csv')
 clusters = TB.cluster(df)
 # clusters = TB.cluster(df, cluster_batch_size=BATCH_SIZE, threshold=THRESHOLD)
 
-print(clusters)
+clusters.to_csv("clustered_data.csv")
+print(clusters)from cluster import TBCluster
+import pandas as pd
+
+TB = TBCluster()
+
+BATCH_SIZE = 20000
+THRESHOLD = 0.6
+
+df = pd.read_csv('data.csv')
+
+clusters = TB.cluster(df)
+# clusters = TB.cluster(df, cluster_batch_size=BATCH_SIZE, threshold=THRESHOLD)
+
+print(clusters)from cluster import TBCluster
+import pandas as pd
+
+TB = TBCluster()
+
+BATCH_SIZE = 20000
+THRESHOLD = 0.6
+
+df = pd.read_csv('data.csv')
+
+clusters = TB.cluster(df)
+# clusters = TB.cluster(df, cluster_batch_size=BATCH_SIZE, threshold=THRESHOLD)
+
+clusters.to_csv("output.csv")
 ```
 threshold (0 to 1) controls how close the clusters are. Bring down cluster_batch_size if running into performance issues, recommended to leave at default.
 
